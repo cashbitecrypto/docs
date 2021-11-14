@@ -7,6 +7,8 @@ title: Mining
 
 Mining is a process of verifying transactions betweeen accounts. The process is very compute intensive, so miners are rewarded with some currency. Miners compete to verify blocks, the first to do this gets paid the reward.
 
+>  _**Please note:** using the simple mining method below, or mining in a solo pool can be inefficient as you are competing against everyone else who is mining. Consider mining in a pool where shares are paid out for more consistent mining payments._
+
 ## Simple Mining
 
 To mine, you will need to have the `miner` program which you [installed](./install.md) earlier. You will also need to run a local node.
@@ -41,7 +43,25 @@ _Optionally, add `--threads 1` onto the command to use less CPU for mining._
 
 ## GPU & Pool Mining
 
-_Coming Soon!_
+### Pools
+
+| Name             | Address                 | Port   | Description                                                  |
+| ---------------- | ----------------------- | ------ | ------------------------------------------------------------ |
+| Jake's Solo Pool | `cbsolo.jakewalker.xyz` | `3333` | **This is a solo pool**, this means you work on your own, and mining profits are not shared between miners, only the miner who finds the correct hash.<br />The username is your wallet address, the password is usually left blank, but can be used to select a node (see [here](https://github.com/cashbitecrypto/node-solo-pool#features)).<br />Use the same address on multiple computers for them to work together. |
+
+### GPU Mining with violetminer
+
+violetminer is a CPU and GPU miner that is compatible with CashBite.
+
+To get started, download the latest version of violetminer from the [GitHub releases page](https://github.com/turtlecoin/violetminer/releases/latest) and extract the archive to get a violetminer executable. Next, open a terminal or command prompt and run the following command, replacing the wallet address with your own.
+
+```bash
+./violetminer --algorithm chukwa_v2 --pool cbsolo.jakewalker.xyz:3333 --username cbXXXXXXX...
+```
+
+
+
+For advanced configuration of violetminer (like reducing lag so you can use your computer while mining), check the [violetminer readme file](https://github.com/turtlecoin/violetminer/blob/master/README.md).
 
 ## Miner Tips
 
